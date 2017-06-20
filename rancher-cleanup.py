@@ -88,7 +88,7 @@ RANCHER_ACCESS_KEY = os.getenv('RANCHER_ACCESS_KEY')
 RANCHER_SECRET_KEY = os.getenv('RANCHER_SECRET_KEY')
 GITHUB_USER = os.getenv('GITHUB_USER')
 GITHUB_ACCESS_TOKEN = os.getenv('GITHUB_ACCESS_TOKEN')
-SCHEDULE_RUN_EVERY = os.getenv('SCHEDULE_RUN_EVERY')
+SCHEDULE_RUN_EVERY = int(os.getenv('SCHEDULE_RUN_EVERY'))
 
 schedule.every(SCHEDULE_RUN_EVERY).minutes.do(clean_all_stacks)
 while True:
