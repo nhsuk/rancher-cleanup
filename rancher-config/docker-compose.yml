@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+
+  rancher-cleanup:
+    image: nhsuk/rancher-cleanup:$DOCKER_IMAGE_TAG
+    environment:
+      RANCHER_SERVER: $RANCHER_SERVER
+      RANCHER_ACCESS_KEY: $RANCHER_ACCESS_KEY
+      RANCHER_SECRET_KEY: $RANCHER_SECRET_KEY
+      GITHUB_USER: $GITHUB_USER
+      GITHUB_ACCESS_TOKEN: $GITHUB_ACCESS_TOKEN
+      SCHEDULE_RUN_EVERY: 10
