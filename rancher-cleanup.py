@@ -62,7 +62,7 @@ def clean_stack(stackdata):
     # delete stack if PR is closed in gitlab
     if github_data['state'] == 'closed':
         print("PR is closed, so deleting stack")
-        delete_stack(i['actions']['remove'])
+        rm_rancher_stack(i['actions']['remove'])
 
     # delete stack if it's over 7 days old
     now = datetime.datetime.now()
@@ -70,7 +70,7 @@ def clean_stack(stackdata):
     stack_creation = datetime.datetime.fromtimestamp((i['createdTS']/1000))
     if stack_creation < week_ago:
         print("stack was created over 1 week ago, removing")
-        delete_stack(i['actions']['remove'])
+        rm_rancher_stack(i['actions']['remove'])
 
 
 def clean_all_stacks():
