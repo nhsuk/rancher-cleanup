@@ -20,4 +20,4 @@ services:
         splunk-sourcetype: docker
         splunk-source: rancher-cleanup
         splunk-verify-connection: "false"
-
+        tag: "{{`{{.ImageName}} {{.Name}} {{.FullID}}`}}"
