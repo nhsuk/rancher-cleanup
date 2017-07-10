@@ -11,13 +11,3 @@ services:
       GITHUB_USER: $GITHUB_USER
       GITHUB_ACCESS_TOKEN: $GITHUB_ACCESS_TOKEN
       SCHEDULE_RUN_EVERY: 10
-    logging:
-      driver: splunk
-      options:
-        splunk-url: ${SPLUNK_HEC_URL}
-        splunk-token: ${SPLUNK_HEC_TOKEN}
-        splunk-insecureskipverify: "true"
-        splunk-sourcetype: docker
-        splunk-source: rancher-cleanup
-        splunk-verify-connection: "false"
-        tag: "{{`{{.ImageName}} {{.Name}} {{.FullID}}`}}"
